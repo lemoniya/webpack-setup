@@ -1,37 +1,36 @@
-## Welcome to GitHub Pages
+configuring-webpack
+# webpack-setup
+My personal webpack setup to learn about webpack and it's various options.
 
-You can use the [editor on GitHub](https://github.com/lemoniya/webpack-setup/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/lemoniya/webpack-setup/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## Added webpack.config.js
+This is the configuration file that webpack looks for while building our project.
+* import/require webpack first.
+* import path module to resolve internal paths.
+* create a config object to hold all the webpack configuration.
+  ###context : (This is the base directory for resolving entry points).
+    * [context documentation](https://webpack.js.org/configuration/entry-context/#context)
+  ###entry :
+    * The point or points to enter the application.
+    * At this point the application starts executing.
+    * If an array is passed all items will be executed.
+    * A dynamically loaded module is not an entry point.
+    * One entry point per HTML page.
+    * **SPA**: one entry point.
+    * **MPA**: multiple entry points.
+    * [entry documentation](https://webpack.js.org/configuration/entry-context/#entry)
+  ###output :
+    * Instructing webpack on how and where it should output your bundles, assets and anything else you bundle or load with webpack.
+    * **output.path** : The output directory as an absolute path.
+      * [output.path configuration documentation](https://webpack.js.org/configuration/output/#output-path)
+    * **output.filename** : This option determines the name of each output bundle. The bundle is written to the directory specified by the output.path option.
+      * [output.filename configuration documentation](https://webpack.js.org/configuration/output/#output-filename)
+  ###Using modules with webpack.
+    * **rules** :
+      * An array of Rules that is also used when the Rule matches.
+      * **rules.test** : condition.
+        * A RegExp: It's tested with the input.
+          *  The Condition must match. The convention is to provide a RegExp or array of RegExps here, but it's not enforced.
+      * **rules.include** : match above pattern to the files in this directory.
+      * **rules.use** :  Each entry specifies a loader to be used.
+        * **loader** : The name of the loader to use (string)
+        * **options** : Any specific configuration options for the loader. >Read more about it specific loader documentation. 
