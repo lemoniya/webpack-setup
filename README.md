@@ -1,3 +1,4 @@
+configuring-webpack
 # webpack-setup
 My personal webpack setup to learn about webpack and it's various options.
 
