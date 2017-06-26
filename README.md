@@ -9,11 +9,11 @@ This is the configuration file that webpack looks for while building our project
 * create a config object to hold all the webpack configuration.
 
 
-###context : (This is the base directory for resolving entry points).
+#### context : (This is the base directory for resolving entry points).
     * [context documentation](https://webpack.js.org/configuration/entry-context/#context).
 
 
-###entry :
+#### entry :
     * The point or points to enter the application.
     * At this point the application starts executing.
     * If an array is passed all items will be executed.
@@ -32,7 +32,7 @@ This is the configuration file that webpack looks for while building our project
       * [output.filename configuration documentation](https://webpack.js.org/configuration/output/#output-filename)
 
 
-###Using modules with webpack.
+#### Using modules with webpack.
     * **rules** :
       * An array of Rules that is also used when the Rule matches.
       * **rules.test** : condition.
